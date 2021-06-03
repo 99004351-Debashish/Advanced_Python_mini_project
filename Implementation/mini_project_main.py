@@ -3,33 +3,41 @@
     * [File: mini_project_main.py]
     * [Author: Debashish Dash]
     * [Date: 03-06-2021]
-    * 
+    *
     * [@copyright (c) 2021]
     *
-""" 
+"""
+
 import os
 import sys
-from openpyxl import workbook, load_workbook
-from openpyxl.utils import get_column_letter 
+from openpyxl import load_workbook #, workbook
 
-wb = load_workbook('Advanced_python_mini_project.xlsx')    # loading the workbook 
+wb = load_workbook('Advanced_python_mini_project.xlsx')    # loading the workbook
 
 ws = wb.active           # gives the active work sheets of the workbook
 
-class wbSet:
-    pass
-"""====================== Rough ======================"""
+
+#====================== Rough ======================
 work_sheets = wb.sheetnames       #storing the worksheet names of the workbook
 print(work_sheets)
 
 #print(ws['A1'].value)
 
 
-"""===================================================="""
+#====================================================
 
 def get_ps_number(ip_ws):
+    """[fetch the data from the first column of the excel]
+
+    Args:
+        ip_ws ([type: object]): [active worksheet]
+
+    Returns:
+        [type: list]: [data of the 1st column in the excel sheet, return as list]
+    """
+
     ps_nums=[]
-    for row in ws.iter_rows(min_row=1, max_col=1, max_row=16, values_only=True):
+    for row in ip_ws.iter_rows(min_row=1, max_col=1, max_row=16, values_only=True):
         ps_nums.append(list(row))
     return ps_nums
 # End Of Function
@@ -53,6 +61,11 @@ def flatten_ps_number(ps_list):
 
 
 def display_ps_number(flat_ps):
+    """[prints the ps ids in the terminal]
+
+    Args:
+        flat_ps ([type: list]): [1-d converted form of the 2-D list data]
+    """
     for ps_num in flat_ps:
         print(ps_num)
 # End of Function
@@ -78,6 +91,8 @@ def system_exit():
 # End of Function
 
 def main():
+    """[this is the function that performs all the tasks in a sequence]
+    """
     print("\nEnter the PS number from the below list:\n")
     print(20*'=')
     ps_num = get_ps_number(ws)

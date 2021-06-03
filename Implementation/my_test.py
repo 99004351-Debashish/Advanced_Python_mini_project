@@ -28,3 +28,10 @@ def test_flatten_ps_number():
     test_ps2 = mp.flatten_ps_number([[99004351],[99004352],[99004353]])       
     assert test_ps2 == [99004351, 99004352, 99004353] # test case 2 for 1 value in the inner list
 
+
+
+
+
+# https://openpyxl.readthedocs.io/en/stable/tutorial.html
+# https://www.javatpoint.com/python-openpyxl
+# https://code.tutsplus.com/tutorials/how-to-work-with-excel-documents-using-python--cms-25698
