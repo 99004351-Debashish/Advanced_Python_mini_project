@@ -18,8 +18,6 @@ ws = wb.active           # gives the active work sheets of the workbook
 
 
 #====================== Rough ======================
-work_sheets = wb.sheetnames       #storing the worksheet names of the workbook
-print(work_sheets)
 
 #print(ws['A1'].value)
 
@@ -57,7 +55,7 @@ def flatten_ps_number(ps_list):
         #appending ps number to the flat list
         flat_ps += ps_num
     return flat_ps
-#End of function
+# End of function
 
 
 def display_ps_number(flat_ps):
@@ -69,6 +67,18 @@ def display_ps_number(flat_ps):
     for ps_num in flat_ps:
         print(ps_num)
 # End of Function
+
+
+def display_sheets_names():
+    """[stores and Displays the names of the sheets]
+    """
+    work_sheets = wb.sheetnames       #storing the worksheet names of the workbook
+    opt=1
+    for sheet in work_sheets:
+        print("\npress ",opt," for ",sheet)
+        opt+=1
+# End of Function
+
 
 def screen_clear():
     """
@@ -93,20 +103,57 @@ def system_exit():
 def main():
     """[this is the function that performs all the tasks in a sequence]
     """
-    print("\nEnter the PS number from the below list:\n")
-    print(20*'=')
-    ps_num = get_ps_number(ws)
-    flatten_ps = flatten_ps_number(ps_num)
-    display_ps_number(flatten_ps)
-    print(20*'=')
-    user_choice = int(input("\nEnter the Ps number: \nOr Enter 0 to exit: "))
-    screen_clear()
-    if user_choice in ps_num:
-        pass
-    elif user_choice == 0:
-        system_exit()
-    else:
-        print("Oops You have entered an invalid choice !!")
+    while True:
+        print("\nSelect the Sheet:")
+        print(30*'=')
+        display_sheets_names()
+        print("\nOr press 0 to exit: \n")
+        print(30*'=')
+        sheet_choice = input("\nPlease Enter your choice:")
+        screen_clear()
+        if sheet_choice == '1':
+            user_choice=" "
+            while user_choice != '1':
+                print("\nEnter the PS number from the below list:\n")
+                print(20*'=')
+                ps_num = get_ps_number(ws)
+                flatten_ps = flatten_ps_number(ps_num)
+                display_ps_number(flatten_ps)
+                print(20*'=')
+                print("\nEnter the ps number to get its data")
+                print("\nOr press 1 to go to Sheet selection menu:")
+                user_choice = input("\nEnter Your Choice: ")
+                screen_clear()
+                if user_choice in str(ps_num):
+                    pass
+                elif user_choice == "1":
+                    system_exit()
+                else:
+                    print(20*'=')
+                    print("Oops You have entered an invalid choice !!")
+                    print("\nPlease Try again...")
+                    print(20*'=')
+        elif sheet_choice == '2':
+            print("We are Working on This feature now, please press 1")
+            continue
+        elif sheet_choice == '3':
+            print("We are Working on This feature now, please press 1")
+            continue
+        elif sheet_choice == '4':
+            print("We are Working on This feature now, please press 1")
+            continue
+        elif sheet_choice == '5':
+            print("We are Working on This feature now, please press 1")
+            continue
+        elif sheet_choice == '0':
+            system_exit()
+        else:
+            print(30*'=')
+            print("ops..!! You have entered an invalid choice")
+            print("Please Try again... :(")
+            print(30*'=')
+            #main()
+            continue
 
 if __name__ == "__main__":
     main()
