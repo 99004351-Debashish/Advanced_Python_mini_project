@@ -13,7 +13,7 @@ import sys
 from openpyxl import load_workbook #, workbook
 
 
-class systemOperations:
+class SystemOperations:
     """[This class contains the method to check the validity of an userinput
         and all the system operations like clear screen and exit screen]
     """
@@ -55,7 +55,7 @@ class systemOperations:
     # End of function
 
 
-class myExcel(systemOperations):                    # inharitance
+class MyExcel(SystemOperations):                    # inharitance
     """[This class contains all the basic methos for getting values from the excel sheet]
 
     Inharitance:
@@ -82,7 +82,7 @@ class myExcel(systemOperations):                    # inharitance
     # End Of Function
 
     def flatten_ps_number(self,ps_list):
-        """[get_ps_num() fun returns ps nums as 2D list, so this function flatten the list in to 1-D]
+        """[so this function flatten the list in to 1-D]
 
         Args:
             ps_list ([type: list]): [It is a 2-D list]
@@ -122,16 +122,26 @@ class myExcel(systemOperations):                    # inharitance
     # End of Function
 # End Of class myExcel
 
-class myExcelOperations:
+class MyExcelOperations:
     """[This class contains all the methods used to fetch the data]
     """
     def __init__(self,work_book,work_sheet):
         self.work_book = work_book
         self.work_sheet = work_sheet
-        self.my_excel_obj_in = myExcel(work_book)      # object of this class
+        self.my_excel_obj_in = MyExcel(work_book)      # object of this class
     # End of Const
-   
+
+
     def get_rows(self,work_sheet,ps_num):
+        """[returns the row index object]
+
+        Args:
+            work_sheet ([type: worksheet object]): [choosen work sheet]
+            ps_num ([type: int]): [number entered by user]
+
+        Returns:
+            [type: object]: [returns the index in object form]
+        """
         self.work_sheet=work_sheet
         for row in work_sheet.rows:
             if row[0].value == ps_num:
@@ -141,19 +151,31 @@ class myExcelOperations:
 
     #var = get_rows(wb['Sem'], 99004351)
     def get_data(self,row_index):
+        """[gets data from the index]
+
+        Args:
+            row_index ([type: object]): [takes object of row number as input]
+        """
         index_data=[]
         for index in range(1,20):
             index_data.append(row_index[index].value)
         print(index_data)
     # End of function
-        
+
+
     def excel_operation(self,work_sheet_name):
+        """[performs all the operation to fetch the data]
+
+        Args:
+            work_sheet_name ([type: object]): [selected worksheet from the user]
+        """
         user_choice=" "
         while user_choice != '1':
             print("\nEnter the PS number from the below list:\n")
-            print(20*'=') 
-            my_excel_obj_in = self.my_excel_obj_in                   # object of myExcel class 
-            ps_num = my_excel_obj_in.get_ps_number(work_sheet_name)  # calling functions of myExcel class
+            print(20*'=')
+            my_excel_obj_in = self.my_excel_obj_in  # object of myExcel class
+            # calling functions of myExcel class
+            ps_num = my_excel_obj_in.get_ps_number(work_sheet_name)
             flatten_ps = my_excel_obj_in.flatten_ps_number(ps_num)
             my_excel_obj_in.display_ps_number(flatten_ps)
             print(20*'=')
@@ -196,17 +218,22 @@ class myExcelOperations:
 # End of class MyExcelOperation
 
 
-class main_excel(myExcel,myExcelOperations):        # multiple inharitance
+class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
+    """[main class uses multiple inheritance]
+
+    Args:
+        MyExcel : [MyExcel class inherited]
+        MyExcelOperations : [MyExcelOperation class inherited]
+    """
     def __init__(self, work_book):
         self.work_book = work_book   # loading the workbook
-        self.my_excel_obj = myExcel(work_book)    #object of the myExcel
+        self.my_excel_obj = MyExcel(work_book)    #object of the MyExcel
 
-    
+
     def run(self):
         """[this is the function that performs all the tasks in a sequence]
         """
         #ws = wb.active           # gives the active work sheets of the workbook
-        
         sheet_score = work_book['Sem']
         sheet_hobbies = work_book['Hobbies']
         sheet_cities = work_book['Cities']
@@ -219,21 +246,26 @@ class main_excel(myExcel,myExcelOperations):        # multiple inharitance
             print("\nOr press 0 to exit: \n")
             print(30*'=')
             sheet_choice = input("\nPlease Enter your choice:")
-            self.my_excel_obj.screen_clear()                                 # inherited function used
+            self.my_excel_obj.screen_clear()           # inherited function used
             if sheet_choice == '1':
-                op_sheet_score = myExcelOperations(work_book, sheet_hobbies)  # myExcelOperations(work_book, sheet_score) 
+                # myExcelOperations(work_book, sheet_score)
+                op_sheet_score = MyExcelOperations(work_book, sheet_hobbies)
                 op_sheet_score.excel_operation(sheet_score)
             elif sheet_choice == '2':
-                op_sheet_hobbies = myExcelOperations(work_book, sheet_hobbies)  # declaring object with sheet_hobbies
+                # declaring object with sheet_hobbies
+                op_sheet_hobbies = MyExcelOperations(work_book, sheet_hobbies)
                 op_sheet_hobbies.excel_operation(sheet_hobbies)
             elif sheet_choice == '3':
-                op_sheet_cities = myExcelOperations(work_book, sheet_cities)  # declaring object with sheet_cities
+                # declaring object with sheet_cities
+                op_sheet_cities = MyExcelOperations(work_book, sheet_cities)
                 op_sheet_cities.excel_operation(sheet_cities)
             elif sheet_choice == '4':
-                op_sheet_pl = myExcelOperations(work_book, sheet_pl)  # declaring object with sheet_sheet_pl
+                # declaring object with sheet_sheet_pl
+                op_sheet_pl = MyExcelOperations(work_book, sheet_pl)
                 op_sheet_pl.excel_operation(sheet_pl)
             elif sheet_choice == '5':
-                op_sheet_domain = myExcelOperations(work_book, sheet_domain)  # declaring object with sheet_domain
+                # declaring object with sheet_domain
+                op_sheet_domain = MyExcelOperations(work_book, sheet_domain)
                 op_sheet_domain.excel_operation(sheet_domain)
             elif sheet_choice == '0':
                 self.my_excel_obj.system_exit()                # inherited function used
@@ -246,7 +278,8 @@ class main_excel(myExcel,myExcelOperations):        # multiple inharitance
                 continue
     # End of run function
 
+
 if __name__ == "__main__":
     work_book = load_workbook("Advanced_python_mini_project.xlsx")   #loading work book
-    main_class_obj = main_excel(work_book)    # object of main class
-    main_class_obj.run() 
+    main_class_obj = Runner(work_book)    # object of main class
+    main_class_obj.run()
