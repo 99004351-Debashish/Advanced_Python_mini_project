@@ -28,7 +28,8 @@ def test_flatten_ps_number():
     test_ps2 = mp.flatten_ps_number([[99004351],[99004352],[99004353]])       
     assert test_ps2 == [99004351, 99004352, 99004353] # test case 2 for 1 value in the inner list
 
-
+def test_display_sheet_names():
+    assert mp.display_sheets_names() is None            # test case 
 
 
 

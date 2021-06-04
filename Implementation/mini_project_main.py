@@ -16,14 +16,6 @@ wb = load_workbook('Advanced_python_mini_project.xlsx')    # loading the workboo
 
 ws = wb.active           # gives the active work sheets of the workbook
 
-
-#====================== Rough ======================
-
-#print(ws['A1'].value)
-
-
-#====================================================
-
 def get_ps_number(ip_ws):
     """[fetch the data from the first column of the excel]
 
@@ -79,6 +71,18 @@ def display_sheets_names():
         opt+=1
 # End of Function
 
+def get_rows(work_s,ps_num):
+    for row in work_s.rows:
+        if row[0].value == ps_num:
+            return row
+# End of function
+
+#var = get_rows(wb['Sem'], 99004351)
+def get_data(row_index):
+    index_data=[]
+    for index in range(1,20):
+        index_data.append(row_index[index].value)
+    print(index_data)
 
 def screen_clear():
     """
@@ -100,9 +104,62 @@ def system_exit():
     sys.exit("\n\nThank You for visiting... \n\n")
 # End of Function
 
+def validate_ip(user_ip,flatten_ps):
+    int_user_ip=int(user_ip)
+    if int_user_ip in flatten_ps:
+        return True
+    return False
+# End of function
+
+def excel_operation(work_sheet_name):
+    user_choice=" "
+    while user_choice != '1':
+        print("\nEnter the PS number from the below list:\n")
+        print(20*'=')
+        ps_num = get_ps_number(work_sheet_name)
+        flatten_ps = flatten_ps_number(ps_num)
+        display_ps_number(flatten_ps)
+        print(20*'=')
+        print("\nEnter the ps number to get its data")
+        print("\nOr press 0 to exit")
+        print("\nOr press 1 to go to Sheet selection menu:")
+        user_choice = input("\nEnter Your Choice: ")
+        screen_clear()
+        if user_choice == '0':
+            system_exit()
+        if user_choice == '1':
+            break
+        if user_choice in str(ps_num):
+            if validate_ip(user_choice,flatten_ps):
+                print("="*40)
+                print("\n\n")
+                print("\nEntered Ps is: ", user_choice, "and respective scores are:" )
+                row_index = get_rows(work_sheet_name, int(user_choice))
+                get_data(row_index)
+                print("\n\n")
+                print("="*40)
+                print("Enter Another PS ????")
+            else:
+                print(20*'=')
+                print("Oops You have entered an invalid choice !!")
+                print("\nPlease Try again...")
+                print(20*'=')
+        else:
+            print(20*'=')
+            print("Oops You have entered an invalid choice !!")
+            print("\nPlease Try again...")
+            print(20*'=')
+# End of function
+
+
 def main():
     """[this is the function that performs all the tasks in a sequence]
     """
+    sheet_score = wb['Sem']
+    sheet_hobbies = wb['Hobbies']
+    sheet_cities = wb['Cities']
+    sheet_pl = wb['PL']
+    sheet_domain = wb['Domain']
     while True:
         print("\nSelect the Sheet:")
         print(30*'=')
@@ -112,39 +169,15 @@ def main():
         sheet_choice = input("\nPlease Enter your choice:")
         screen_clear()
         if sheet_choice == '1':
-            user_choice=" "
-            while user_choice != '1':
-                print("\nEnter the PS number from the below list:\n")
-                print(20*'=')
-                ps_num = get_ps_number(ws)
-                flatten_ps = flatten_ps_number(ps_num)
-                display_ps_number(flatten_ps)
-                print(20*'=')
-                print("\nEnter the ps number to get its data")
-                print("\nOr press 1 to go to Sheet selection menu:")
-                user_choice = input("\nEnter Your Choice: ")
-                screen_clear()
-                if user_choice in str(ps_num):
-                    pass
-                elif user_choice == "1":
-                    system_exit()
-                else:
-                    print(20*'=')
-                    print("Oops You have entered an invalid choice !!")
-                    print("\nPlease Try again...")
-                    print(20*'=')
+            excel_operation(sheet_score)
         elif sheet_choice == '2':
-            print("We are Working on This feature now, please press 1")
-            continue
+            excel_operation(sheet_hobbies)
         elif sheet_choice == '3':
-            print("We are Working on This feature now, please press 1")
-            continue
+            excel_operation(sheet_cities)
         elif sheet_choice == '4':
-            print("We are Working on This feature now, please press 1")
-            continue
+            excel_operation(sheet_pl)
         elif sheet_choice == '5':
-            print("We are Working on This feature now, please press 1")
-            continue
+            excel_operation(sheet_domain)
         elif sheet_choice == '0':
             system_exit()
         else:
