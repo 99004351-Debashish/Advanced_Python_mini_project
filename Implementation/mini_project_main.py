@@ -13,7 +13,54 @@ import sys
 from openpyxl import load_workbook #, workbook
 
 
-class myExcel:
+class systemOperations:
+    """[This class contains the method to check the validity of an userinput
+        and all the system operations like clear screen and exit screen]
+    """
+    def screen_clear(self):
+        """
+        clears the screen, works in both the os
+        """
+    # for mac and linux(here, os.name is 'posix')
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        # for windows platfrom
+        _ = os.system('cls')
+    # End of Function
+
+    def system_exit(self):
+        """
+            [Exits from the code]
+        """
+        sys.exit("\n\nThank You for visiting... \n\n")
+    # End of Function
+
+    def validate_ip(self, user_ip, flatten_ps):
+        """[This method checks the validity the choices entered by the user]
+
+        Args:
+            user_ip ([type: char]): [user choice]
+            flatten_ps ([type: list]): [available options]
+
+        Returns:
+            [type: boolean]: [True if present and false if not present in the list]
+        """
+        user_ip=user_ip
+        flatten_ps = flatten_ps
+        int_user_ip=int(user_ip)
+        if int_user_ip in flatten_ps:
+            return True
+        return False
+    # End of function
+
+
+class myExcel(systemOperations):                    # inharitance
+    """[This class contains all the basic methos for getting values from the excel sheet]
+
+    Inharitance:
+        systemOperations ([type: class]): [MyExcel class inherits the systemOperations class]
+    """
     def __init__(self,work_book):
         self.work_book = work_book
     # End of const
@@ -75,8 +122,9 @@ class myExcel:
     # End of Function
 # End Of class myExcel
 
-
 class myExcelOperations:
+    """[This class contains all the methods used to fetch the data]
+    """
     def __init__(self,work_book,work_sheet):
         self.work_book = work_book
         self.work_sheet = work_sheet
@@ -113,13 +161,19 @@ class myExcelOperations:
             print("\nOr press 0 to exit")
             print("\nOr press 1 to go to Sheet selection menu:")
             user_choice = input("\nEnter Your Choice: ")
-            screen_clear()
+            my_excel_obj_in.screen_clear()                           # inherited function used
             if user_choice == '0':
-                system_exit()
+                my_excel_obj_in.system_exit()                        # inherited function used
             if user_choice == '1':
                 break
+            if user_choice == '':
+                print(20*'=')
+                print("Oops You have entered nothing !!")
+                print("\nPlease Try again...")
+                print(20*'=')
+                continue
             if user_choice in str(ps_num):
-                if validate_ip(user_choice,flatten_ps):
+                if my_excel_obj_in.validate_ip(user_choice,flatten_ps):
                     print("="*40)
                     print("\n\n")
                     print("\nEntered Ps is: ", user_choice, "and respective Data is::" )
@@ -142,78 +196,57 @@ class myExcelOperations:
 # End of class MyExcelOperation
 
 
-def screen_clear():
-    """
-    clears the screen, works in both the os
-    """
-    # for mac and linux(here, os.name is 'posix')
-    if os.name == 'posix':
-        _ = os.system('clear')
-    else:
-        # for windows platfrom
-        _ = os.system('cls')
-# End of Function
+class main_excel(myExcel,myExcelOperations):        # multiple inharitance
+    def __init__(self, work_book):
+        self.work_book = work_book   # loading the workbook
+        self.my_excel_obj = myExcel(work_book)    #object of the myExcel
 
-
-def system_exit():
-    """
-        [Exits from the code]
-    """
-    sys.exit("\n\nThank You for visiting... \n\n")
-# End of Function
-
-def validate_ip(user_ip,flatten_ps):
-    int_user_ip=int(user_ip)
-    if int_user_ip in flatten_ps:
-        return True
-    return False
-# End of function
-
-
-def main():
-    """[this is the function that performs all the tasks in a sequence]
-    """
-    wb = load_workbook('Advanced_python_mini_project.xlsx')    # loading the workbook
-    work_book = wb
-    #ws = wb.active           # gives the active work sheets of the workbook
-    my_excel_obj = myExcel(work_book)    #object of the myExcel
-    sheet_score = work_book['Sem']
-    sheet_hobbies = work_book['Hobbies']
-    sheet_cities = work_book['Cities']
-    sheet_pl = work_book['PL']
-    sheet_domain = work_book['Domain']
-    while True:
-        print("\nSelect the Sheet:")
-        print(30*'=')
-        my_excel_obj.display_sheets_names()
-        print("\nOr press 0 to exit: \n")
-        print(30*'=')
-        sheet_choice = input("\nPlease Enter your choice:")
-        screen_clear()
-        if sheet_choice == '1':
-            op_sheet_score = myExcelOperations(work_book, sheet_score)  # declaring object with sheet_score
-            op_sheet_score.excel_operation(sheet_score)
-        elif sheet_choice == '2':
-            op_sheet_hobbies = myExcelOperations(work_book, sheet_hobbies)  # declaring object with sheet_hobbies
-            op_sheet_hobbies.excel_operation(sheet_hobbies)
-        elif sheet_choice == '3':
-            op_sheet_cities = myExcelOperations(work_book, sheet_cities)  # declaring object with sheet_cities
-            op_sheet_cities.excel_operation(sheet_cities)
-        elif sheet_choice == '4':
-            op_sheet_pl = myExcelOperations(work_book, sheet_pl)  # declaring object with sheet_sheet_pl
-            op_sheet_pl.excel_operation(sheet_pl)
-        elif sheet_choice == '5':
-            op_sheet_domain = myExcelOperations(work_book, sheet_domain)  # declaring object with sheet_domain
-            op_sheet_domain.excel_operation(sheet_domain)
-        elif sheet_choice == '0':
-            system_exit()
-        else:
+    
+    def run(self):
+        """[this is the function that performs all the tasks in a sequence]
+        """
+        #ws = wb.active           # gives the active work sheets of the workbook
+        
+        sheet_score = work_book['Sem']
+        sheet_hobbies = work_book['Hobbies']
+        sheet_cities = work_book['Cities']
+        sheet_pl = work_book['PL']
+        sheet_domain = work_book['Domain']
+        while True:
+            print("\nSelect the Sheet:")
             print(30*'=')
-            print("ops..!! You have entered an invalid choice")
-            print("Please Try again... :(")
+            self.my_excel_obj.display_sheets_names()
+            print("\nOr press 0 to exit: \n")
             print(30*'=')
-            #main()
-            continue
+            sheet_choice = input("\nPlease Enter your choice:")
+            self.my_excel_obj.screen_clear()                                 # inherited function used
+            if sheet_choice == '1':
+                op_sheet_score = myExcelOperations(work_book, sheet_hobbies)  # myExcelOperations(work_book, sheet_score) 
+                op_sheet_score.excel_operation(sheet_score)
+            elif sheet_choice == '2':
+                op_sheet_hobbies = myExcelOperations(work_book, sheet_hobbies)  # declaring object with sheet_hobbies
+                op_sheet_hobbies.excel_operation(sheet_hobbies)
+            elif sheet_choice == '3':
+                op_sheet_cities = myExcelOperations(work_book, sheet_cities)  # declaring object with sheet_cities
+                op_sheet_cities.excel_operation(sheet_cities)
+            elif sheet_choice == '4':
+                op_sheet_pl = myExcelOperations(work_book, sheet_pl)  # declaring object with sheet_sheet_pl
+                op_sheet_pl.excel_operation(sheet_pl)
+            elif sheet_choice == '5':
+                op_sheet_domain = myExcelOperations(work_book, sheet_domain)  # declaring object with sheet_domain
+                op_sheet_domain.excel_operation(sheet_domain)
+            elif sheet_choice == '0':
+                self.my_excel_obj.system_exit()                # inherited function used
+            else:
+                print(30*'=')
+                print("ops..!! You have entered an invalid choice")
+                print("Please Try again... :(")
+                print(30*'=')
+                #main()
+                continue
+    # End of run function
 
 if __name__ == "__main__":
-    main()
+    work_book = load_workbook("Advanced_python_mini_project.xlsx")   #loading work book
+    main_class_obj = main_excel(work_book)    # object of main class
+    main_class_obj.run() 
