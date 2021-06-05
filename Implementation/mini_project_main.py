@@ -17,7 +17,8 @@ class SystemOperations:
     """[This class contains the method to check the validity of an userinput
         and all the system operations like clear screen and exit screen]
     """
-    def screen_clear(self):
+    @staticmethod
+    def screen_clear():
         """
         clears the screen, works in both the os
         """
@@ -28,8 +29,8 @@ class SystemOperations:
         # for windows platfrom
         _ = os.system('cls')
     # End of Function
-
-    def system_exit(self):
+    @staticmethod
+    def system_exit():
         """
             [Exits from the code]
         """
@@ -46,8 +47,6 @@ class SystemOperations:
         Returns:
             [type: boolean]: [True if present and false if not present in the list]
         """
-        user_ip=user_ip
-        flatten_ps = flatten_ps
         int_user_ip=int(user_ip)
         if int_user_ip in flatten_ps:
             return True
