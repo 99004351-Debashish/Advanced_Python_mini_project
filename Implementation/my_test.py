@@ -9,6 +9,7 @@ ws = wb.active           # gives the active work sheets of the workbook
 demo_ps= [['PS_No.'], [99004351], [99004352], [99004353], [99004354], [99004355], [99004356], [99004357], [99004358], [99004359], [99004360], [99004361], [99004362], [99004363], [99004364], [99004365]]
 demo_ps_tup = [('PS_No.',), (99004351,), (99004352,), (99004353,), (99004354,), (99004355,), (99004356,), (99004357,), (99004358,), (99004359,), (99004360,), (99004361,), (99004362,), (99004363,), (99004364,), (99004365,)]
 tup_tup = (('PS_No.',), (99004351,), (99004352,), (99004353,), (99004354,), (99004355,), (99004356,), (99004357,), (99004358,), (99004359,), (99004360,), (99004361,), (99004362,), (99004363,), (99004364,), (99004365,))
+flat_ps = [99004351,99004352,99004353,99004354,99004355,99004356,99004357,99004358,99004359,99004360,99004361,99004362,99004363,99004364,99004365]
 
 #===================================Testing of Functions==========================
 
@@ -35,12 +36,24 @@ def test_display_sheet_names():
     mp_sheet = MyExcel(wb)
     assert mp_sheet.display_sheets_names() is None            # test case 
 
-"""def test_get_rows():
-    get_row_obj = MyExcelOperations(wb, ws)
-    index = get_row_obj.get_rows(ws, 99004351).values
-    assert index is ws.rows"""
-#("<Cell 'Sem'.A2>", "<Cell 'Sem'.B2>", "<Cell 'Sem'.C2>", "<Cell 'Sem'.D2>", "<Cell 'Sem'.E2>", "<Cell 'Sem'.F2>", "<Cell 'Sem'.G2>", "<Cell 'Sem'.H2>", "<Cell 'Sem'.I2>", "<Cell 'Sem'.J2>", "<Cell 'Sem'.K2>", "<Cell 'Sem'.L2>", "<Cell 'Sem'.M2>", "<Cell 'Sem'.N2>", "<Cell 'Sem'.O2>", "<Cell 'Sem'.P2>", "<Cell 'Sem'.Q2>", "<Cell 'Sem'.R2>", "<Cell 'Sem'.S2>", "<Cell 'Sem'.T2>")
 
+def test_get_data():
+    get_data_obj = MyExcelOperations(wb, wb['Sem'])
+    list_data = []
+    index = get_data_obj.get_rows(ws, 99004351)
+    list_data = get_data_obj.get_data(index)
+    assert list_data == None                                 # Test case 1
+
+def test_validate_ip():
+    sys_op_obj = SystemOperations()
+    assert sys_op_obj.validate_ip(99004351, flat_ps) is True    #test case 1
+    assert sys_op_obj.validate_ip(99004352, flat_ps) is True    #test case 2
+    assert sys_op_obj.validate_ip(99004353, flat_ps) is True    #test case 3
+    assert sys_op_obj.validate_ip(99004365, flat_ps) is True    #test case 4
+    assert sys_op_obj.validate_ip(0, flat_ps) is False          #test case 5
+    # not in the ps list
+    assert sys_op_obj.validate_ip(99004350, flat_ps) is False   #test case 6
+    assert sys_op_obj.validate_ip(99004366, flat_ps) is False   #test case 7
 
 #================References====================
 # https://openpyxl.readthedocs.io/en/stable/tutorial.html
