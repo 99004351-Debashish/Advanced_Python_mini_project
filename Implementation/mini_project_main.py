@@ -176,11 +176,11 @@ class MyExcelOperations:
             entered_ps_number ([type: int]): [ps number entered by the user]
             ls_sheet_name ([type: list]): [name of the sheet]
         """
-        ws = output_file.active       # selecting the active sheet of the output work book
+        work_s = output_file.active       # selecting the active sheet of the output work book
         ls_data=[entered_ps_number, ls_sheet_name]
         for index in range(1,20):
             ls_data.append(data[index].value)
-        ws.append(ls_data)
+        work_s.append(ls_data)
         output_file.save("Outputs.xlsx")
     # End of function
 
