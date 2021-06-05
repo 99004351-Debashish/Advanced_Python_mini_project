@@ -18,7 +18,7 @@ class SystemOperations:
         and all the system operations like clear screen and exit screen]
     """
     @staticmethod
-    def screen_clear():
+    def screen_clear():                                 # static method
         """
         clears the screen, works in both the os
         """
@@ -29,7 +29,9 @@ class SystemOperations:
         # for windows platfrom
         _ = os.system('cls')
     # End of Function
-    @staticmethod
+
+
+    @staticmethod                                       # static method
     def system_exit():
         """
             [Exits from the code]
