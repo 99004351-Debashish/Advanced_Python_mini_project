@@ -1,0 +1,79 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-6.2.3, py-1.10.0, pluggy-0.13.1 -- /usr/bin/python3.8
+cachedir: .pytest_cache
+rootdir: /home/deba/Desktop/LTTS/Advance_python/Advance_Python_project/Implementation
+plugins: cov-2.12.0
+collecting ... [H[2J[3Jcollected 6 items
+
+my_test.py::test_get_ps_number PASSED
+my_test.py::test_display_ps_number ['PS_No.']
+[99004351]
+[99004352]
+[99004353]
+[99004354]
+[99004355]
+[99004356]
+[99004357]
+[99004358]
+[99004359]
+[99004360]
+[99004361]
+[99004362]
+[99004363]
+[99004364]
+[99004365]
+('PS_No.',)
+(99004351,)
+(99004352,)
+(99004353,)
+(99004354,)
+(99004355,)
+(99004356,)
+(99004357,)
+(99004358,)
+(99004359,)
+(99004360,)
+(99004361,)
+(99004362,)
+(99004363,)
+(99004364,)
+(99004365,)
+('PS_No.',)
+(99004351,)
+(99004352,)
+(99004353,)
+(99004354,)
+(99004355,)
+(99004356,)
+(99004357,)
+(99004358,)
+(99004359,)
+(99004360,)
+(99004361,)
+(99004362,)
+(99004363,)
+(99004364,)
+(99004365,)
+PASSED
+my_test.py::test_flatten_ps_number PASSED
+my_test.py::test_display_sheet_names 
+press  1  for  Sem
+
+press  2  for  Hobbies
+
+press  3  for  Cities
+
+press  4  for  PL
+
+press  5  for  Domain
+PASSED
+my_test.py::test_get_data ['A', 'B', 'V', 'X', 'D', 'FG', 'WE', 'DS', 'SS', 'VF', 'DS', 'GT', 'FD', 'EW', 'SW', 'AS', 'QW', 'EW', 'RE']
+
+
+******************************************************************************************************************************************************************
+					The Fetched data is also present in '|>>>>> Outputs.xlsx <<<<<|' file
+******************************************************************************************************************************************************************
+PASSED
+my_test.py::test_validate_ip PASSED
+
+============================== 6 passed in 0.31s ===============================

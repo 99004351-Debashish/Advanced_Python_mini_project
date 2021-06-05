@@ -15,7 +15,7 @@ flat_ps = [99004351,99004352,99004353,99004354,99004355,99004356,99004357,990043
 
 def test_get_ps_number():
     my_excel = MyExcel(wb)          
-    test_var = my_excel.get_ps_number(ws)
+    test_var = my_excel.get_ps_number()
     assert test_var == demo_ps                          # test case 1
 
 def test_display_ps_number():  
