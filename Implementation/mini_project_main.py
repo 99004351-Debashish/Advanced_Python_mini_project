@@ -218,7 +218,6 @@ class MyExcelOperations:
             if user_choice in str(ps_num):
                 if my_excel_obj_in.validate_ip(user_choice,flatten_ps):
                     print("="*40)
-                    print("\n")
                     print("\nEntered Ps is: ", user_choice, "and respective Data is::" )
                     row_index = self.get_rows(work_sheet_name, int(user_choice))
                     self.get_data(row_index)
