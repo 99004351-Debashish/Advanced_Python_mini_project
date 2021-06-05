@@ -75,7 +75,6 @@ class MyExcel(SystemOperations):                    # inharitance
         Returns:
             [type: list]: [data of the 1st column in the excel sheet, return as list]
         """
-
         ps_nums=[]
         for row in ip_ws.iter_rows(min_row=1, max_col=1, max_row=16, values_only=True):
             ps_nums.append(list(row))
@@ -126,10 +125,11 @@ class MyExcel(SystemOperations):                    # inharitance
 class MyExcelOperations:
     """[This class contains all the methods used to fetch the data]
     """
-    def __init__(self,work_book,work_sheet):
+    def __init__(self,work_book,work_sheet, ls_sheet_name):
         self.work_book = work_book
         self.work_sheet = work_sheet
         self.my_excel_obj_in = MyExcel(work_book)      # object of this class
+        self.ls_sheet_name = ls_sheet_name
     # End of Const
 
 
@@ -161,8 +161,28 @@ class MyExcelOperations:
         for index in range(1,20):
             index_data.append(row_index[index].value)
         print(index_data)
+        print("\n")
+        print("*"*125)
+        print("\t\t\tThe Fetched data is also present in '|>>>>> Outputs.xlsx <<<<<|' file")
+        print("*"*125)
     # End of function
 
+    def write_excel(self, data, output_file, entered_ps_number, ls_sheet_name):
+        """[This function writes the data to excel sheet]
+
+        Args:
+            data ([type: list]): [data to be entered]
+            output_file ([type: workbook object]): [object of output workbook excel file]
+            entered_ps_number ([type: int]): [ps number entered by the user]
+            ls_sheet_name ([type: list]): [name of the sheet]
+        """
+        ws = output_file.active       # selecting the active sheet of the output work book
+        ls_data=[entered_ps_number, ls_sheet_name]
+        for index in range(1,20):
+            ls_data.append(data[index].value)
+        ws.append(ls_data)
+        output_file.save("Outputs.xlsx")
+    # End of function
 
     def excel_operation(self,work_sheet_name):
         """[performs all the operation to fetch the data]
@@ -198,11 +218,15 @@ class MyExcelOperations:
             if user_choice in str(ps_num):
                 if my_excel_obj_in.validate_ip(user_choice,flatten_ps):
                     print("="*40)
-                    print("\n\n")
+                    print("\n")
                     print("\nEntered Ps is: ", user_choice, "and respective Data is::" )
                     row_index = self.get_rows(work_sheet_name, int(user_choice))
                     self.get_data(row_index)
-                    print("\n\n")
+                    output_file = load_workbook("Outputs.xlsx")     #loading the oyutput work book
+                    # writing into output workbook
+                    ls_sheet_name = self.ls_sheet_name
+                    self.write_excel(row_index, output_file, user_choice, ls_sheet_name)
+                    print("\n")
                     print("="*40)
                     print("Enter Another PS ????")
                 else:
@@ -235,6 +259,8 @@ class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
         """[this is the function that performs all the tasks in a sequence]
         """
         #ws = wb.active           # gives the active work sheets of the workbook
+        #sheet_ls = work_book.sheetnames
+        # print(sheet_ls)
         sheet_score = work_book['Sem']
         sheet_hobbies = work_book['Hobbies']
         sheet_cities = work_book['Cities']
@@ -250,23 +276,28 @@ class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
             self.my_excel_obj.screen_clear()           # inherited function used
             if sheet_choice == '1':
                 # myExcelOperations(work_book, sheet_score)
-                op_sheet_score = MyExcelOperations(work_book, sheet_hobbies)
+                ls_sheet_name = work_book.sheetnames[0]
+                op_sheet_score = MyExcelOperations(work_book, sheet_score, ls_sheet_name)
                 op_sheet_score.excel_operation(sheet_score)
             elif sheet_choice == '2':
                 # declaring object with sheet_hobbies
-                op_sheet_hobbies = MyExcelOperations(work_book, sheet_hobbies)
+                ls_sheet_name = work_book.sheetnames[1]
+                op_sheet_hobbies = MyExcelOperations(work_book, sheet_hobbies, ls_sheet_name)
                 op_sheet_hobbies.excel_operation(sheet_hobbies)
             elif sheet_choice == '3':
                 # declaring object with sheet_cities
-                op_sheet_cities = MyExcelOperations(work_book, sheet_cities)
+                ls_sheet_name = work_book.sheetnames[2]
+                op_sheet_cities = MyExcelOperations(work_book, sheet_cities, ls_sheet_name)
                 op_sheet_cities.excel_operation(sheet_cities)
             elif sheet_choice == '4':
                 # declaring object with sheet_sheet_pl
-                op_sheet_pl = MyExcelOperations(work_book, sheet_pl)
+                ls_sheet_name = work_book.sheetnames[3]
+                op_sheet_pl = MyExcelOperations(work_book, sheet_pl, ls_sheet_name)
                 op_sheet_pl.excel_operation(sheet_pl)
             elif sheet_choice == '5':
                 # declaring object with sheet_domain
-                op_sheet_domain = MyExcelOperations(work_book, sheet_domain)
+                ls_sheet_name = work_book.sheetnames[4]
+                op_sheet_domain = MyExcelOperations(work_book, sheet_domain, ls_sheet_name)
                 op_sheet_domain.excel_operation(sheet_domain)
             elif sheet_choice == '0':
                 self.my_excel_obj.system_exit()                # inherited function used
