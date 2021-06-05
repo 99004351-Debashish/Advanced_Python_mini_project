@@ -162,9 +162,9 @@ class MyExcelOperations:
             index_data.append(row_index[index].value)
         print(index_data)
         print("\n")
-        print("*"*125)
-        print("\t\t\tThe Fetched data is also present in '|>>>>> Outputs.xlsx <<<<<|' file")
-        print("*"*125)
+        print("*"*162)
+        print("\t\t\t\t\tThe Fetched data is also present in '|>>>>> Outputs.xlsx <<<<<|' file")
+        print("*"*162)
     # End of function
 
     def write_excel(self, data, output_file, entered_ps_number, ls_sheet_name):
