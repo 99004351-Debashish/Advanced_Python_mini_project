@@ -38,7 +38,7 @@ def test_display_sheet_names():
 
 
 def test_get_data():
-    get_data_obj = MyExcelOperations(wb, wb['Sem'])
+    get_data_obj = MyExcelOperations(wb, wb['Sem'], ['Sem'])
     list_data = []
     index = get_data_obj.get_rows(ws, 99004351)
     list_data = get_data_obj.get_data(index)
