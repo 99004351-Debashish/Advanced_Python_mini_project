@@ -1,7 +1,7 @@
 ## contents
 
-* [pylint_score](#pylint_score) 9.11/10
-* [pytest_output](#pytest_output) 6/6
+* [pylint_score](#pylint_score)     9.11/10
+* [pytest_output](#pytest_output)   6/6
 * [pytest_output](#pytest_output)
 
 ----
