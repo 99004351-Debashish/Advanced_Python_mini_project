@@ -28,4 +28,4 @@ jobs:
         ls
         cd Implementation
         ls
-        pytest test.py
+        pytest my_test.py
