@@ -196,25 +196,29 @@ class MyExcelOperations:
         my_excel_obj_in = self.my_excel_obj_in
         ps_num = my_excel_obj_in.get_ps_number()
         flatten_ps = my_excel_obj_in.flatten_ps_number(ps_num)
-        if my_excel_obj_in.validate_ip(ps_num_entered,flatten_ps):
-            print("="*40)
-            print("\nEntered Ps is: ", ps_num_entered, "and respective Data is::" )
-            row_index = self.get_rows(work_sheet_name, int(ps_num_entered))
-            self.get_data(row_index)
-            output_file = load_workbook("Outputs.xlsx")     #loading the oyutput work book
-            # writing into output workbook
-            ls_sheet_name = self.ls_sheet_name
-            self.write_excel(row_index, output_file, ps_num_entered, ls_sheet_name)
-            print("\n")
-            print("="*40)
-            print("\n")
-            print("Want data from another sheet...????")
-            print("\n")
-        else:
+        try:                                                            # try block
+            """[User defined Exception Handling used with 1 except block]
+            """
+            if my_excel_obj_in.validate_ip(ps_num_entered,flatten_ps):
+                print("="*40)
+                print("\nEntered Ps is: ", ps_num_entered, "and respective Data is::" )
+                row_index = self.get_rows(work_sheet_name, int(ps_num_entered))
+                self.get_data(row_index)
+                output_file = load_workbook("Outputs.xlsx")     #loading the oyutput work book
+                # writing into output workbook
+                ls_sheet_name = self.ls_sheet_name
+                self.write_excel(row_index, output_file, ps_num_entered, ls_sheet_name)
+                print("\n")
+                print("="*40)
+                print("\n")
+                print("Want data from another sheet...????")
+                print("\n")
+        except:                                                 # user defined exception
             print(20*'=')
             print("Oops You have entered an invalid choice !!")
             print("\nPlease Try again...")
             print(20*'=')
+            raise
     # End of function
 # End of class MyExcelOperation
 
@@ -264,70 +268,83 @@ class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
                     sheet_pl = work_book['PL']
                     sheet_domain = work_book['Domain']
                     while True:
-                        print("\nSelect the Sheet:")
-                        print(30*'=')
-                        self.my_excel_obj.display_sheets_names()
-                        print("\nOr press 0 to exit:")
-                        print("\nOr press 6 to Enter another PS:\n")
-                        print(30*'=')
-                        sheet_choice = input("\nPlease Enter your choice:")
-                        self.my_excel_obj.screen_clear()           # inherited function used
-                        if sheet_choice == '1':
-                            # myExcelOperations(work_book, sheet_score)
-                            ls_sheet_name = work_book.sheetnames[0]
-                            op_sheet_score = MyExcelOperations(work_book, sheet_score,
-                                                               ls_sheet_name)
-                            op_sheet_score.excel_operation(sheet_score, user_choice)
-                        elif sheet_choice == '2':
-                            # declaring object with sheet_hobbies
-                            ls_sheet_name = work_book.sheetnames[1]
-                            op_sheet_hobbies = MyExcelOperations(work_book, sheet_hobbies,
-                                                                 ls_sheet_name)
-                            op_sheet_hobbies.excel_operation(sheet_hobbies, user_choice)
-                        elif sheet_choice == '3':
-                            # declaring object with sheet_cities
-                            ls_sheet_name = work_book.sheetnames[2]
-                            op_sheet_cities = MyExcelOperations(work_book, sheet_cities,
+                        try:          # Try block
+                            """[Exception Handling used]
+                               [this try block has 2 except blocks]
+                            """
+                            print("\nSelect the Sheet:")
+                            print(30*'=')
+                            self.my_excel_obj.display_sheets_names()
+                            print("\nOr press 6 to Enter another PS:\n")
+                            print("\nOr press 0 to exit:\n")
+                            print(30*'=')
+                            sheet_choice = int(input("\nPlease Enter your choice:"))
+                            self.my_excel_obj.screen_clear()           # inherited function used
+                            if sheet_choice == 1:
+                                # myExcelOperations(work_book, sheet_score)
+                                ls_sheet_name = work_book.sheetnames[0]
+                                op_sheet_score = MyExcelOperations(work_book, sheet_score,
                                                                 ls_sheet_name)
-                            op_sheet_cities.excel_operation(sheet_cities, user_choice)
-                        elif sheet_choice == '4':
-                            # declaring object with sheet_sheet_pl
-                            ls_sheet_name = work_book.sheetnames[3]
-                            op_sheet_pl = MyExcelOperations(work_book, sheet_pl, ls_sheet_name)
-                            op_sheet_pl.excel_operation(sheet_pl, user_choice)
-                        elif sheet_choice == '5':
-                            # declaring object with sheet_domain
-                            ls_sheet_name = work_book.sheetnames[4]
-                            op_sheet_domain = MyExcelOperations(work_book, sheet_domain,
-                                                                ls_sheet_name)
-                            op_sheet_domain.excel_operation(sheet_domain, user_choice)
-                        elif sheet_choice == '0':
-                            self.my_excel_obj.system_exit()                # inherited function used
-                        elif sheet_choice == '6':
-                            print("\n")
-                            print("#"*50)
-                            print("\n")
-                            print("\tYou can Enter another Ps number....")
-                            print("\n")
-                            print("#"*50)
-                            print("\n")
-                            break
-                        else:
+                                op_sheet_score.excel_operation(sheet_score, user_choice)
+                            elif sheet_choice == 2:
+                                # declaring object with sheet_hobbies
+                                ls_sheet_name = work_book.sheetnames[1]
+                                op_sheet_hobbies = MyExcelOperations(work_book, sheet_hobbies,
+                                                                    ls_sheet_name)
+                                op_sheet_hobbies.excel_operation(sheet_hobbies, user_choice)
+                            elif sheet_choice == 3:
+                                # declaring object with sheet_cities
+                                ls_sheet_name = work_book.sheetnames[2]
+                                op_sheet_cities = MyExcelOperations(work_book, sheet_cities,
+                                                                    ls_sheet_name)
+                                op_sheet_cities.excel_operation(sheet_cities, user_choice)
+                            elif sheet_choice == 4:
+                                # declaring object with sheet_sheet_pl
+                                ls_sheet_name = work_book.sheetnames[3]
+                                op_sheet_pl = MyExcelOperations(work_book, sheet_pl, ls_sheet_name)
+                                op_sheet_pl.excel_operation(sheet_pl, user_choice)
+                            elif sheet_choice == 5:
+                                # declaring object with sheet_domain
+                                ls_sheet_name = work_book.sheetnames[4]
+                                op_sheet_domain = MyExcelOperations(work_book, sheet_domain,
+                                                                    ls_sheet_name)
+                                op_sheet_domain.excel_operation(sheet_domain, user_choice)
+                            elif sheet_choice == 0:
+                                self.my_excel_obj.system_exit()          # inherited function used
+                            elif sheet_choice == 6:
+                                print("\n")
+                                print("#"*50)
+                                print("\n")
+                                print("\tYou can Enter another Ps number....")
+                                print("\n")
+                                print("#"*50)
+                                print("\n")
+                                break
+                            else:
+                                print("\n")
+                                print(30*'=')
+                                print("ops..!! You have entered an invalid choice")
+                                print("Please Try again... :(")
+                                print(30*'=')
+                                #main()
+                                continue
+                        except ValueError:                                     # Except block
                             print("\n")
                             print(30*'=')
-                            print("ops..!! You have entered an invalid choice")
-                            print("Please Try again... :(")
+                            print("ValueError !!:You have entered an char value.. :(\n")
+                            print("Please Try again and Enter Your choice in int value... :(\n")
                             print(30*'=')
-                            #main()
-                            continue
-                else:
-                    print("\n")
-                    print(30*'=')
-                    print("ops..!! You have entered an invalid choice")
-                    print("Please Try again... :(")
-                    print(30*'=')
-                    #main()
-                    continue
+                        except:                                    # user defined exception
+                            print("Unexpected error:", sys.exc_info()[0])
+                            raise
+            else:
+                print("\n")
+                print(30*'=')
+                print("ops..!! You have entered an invalid choice")
+                print("Please Try again... :(")
+                print(30*'=')
+                #main()
+                continue
     # End of run function
 
 
