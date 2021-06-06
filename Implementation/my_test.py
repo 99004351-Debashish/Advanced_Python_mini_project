@@ -54,8 +54,3 @@ def test_validate_ip():
     # not in the ps list
     assert sys_op_obj.validate_ip(99004350, flat_ps) is False   #test case 6
     assert sys_op_obj.validate_ip(99004366, flat_ps) is False   #test case 7
-
-#================References====================
-# https://openpyxl.readthedocs.io/en/stable/tutorial.html
-# https://www.javatpoint.com/python-openpyxl
-# https://code.tutsplus.com/tutorials/how-to-work-with-excel-documents-using-python--cms-25698
