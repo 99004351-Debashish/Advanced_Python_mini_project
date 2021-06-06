@@ -8,6 +8,7 @@
 * [Summary Table](#Summary_Table)
 * [Folde Structure](#folder_structure)
 * [Directory Tree](#Directory_Tree)
+* [Installations_and_Run_the_code](#Installations_and_Run_the_code)
 ----
 ## About
 * This mini project is an appliction that fetch data from a excel sheet and stores the fetched data in another excel sheet
@@ -71,6 +72,40 @@ Folder        | description
 ├── .gitignore
 └── README.md
 
+```
+
+-----
+## Installations_and_Run_the_code
+
+The code is written in Python 3.8.8 and the Os used is Ubuntu 20.04. If you dont have python installed you can find it [here](https://www.python.org/downloads/).
+If you are using a lower version of python then you can upgrade using the pip package, ensuring you have latest version of pip.
+* To run this project you need to first [clone](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository
+
+```
+# clone the repo
+$ git clone https://github.com/99004351-Debashish/Advanced_Python_mini_project.git
+
+# change the working directory to Implementation
+$ cd Implementation
+
+=================================
+# install the requirements
+$ pip3 install -r requirements.txt
+=================================
+
+**(make sure u are running the code inside implementation directory) **
+
+# run the code in linux system
+$ python3 mini_project_main.py 
+
+# run the code in windows system
+$ python mini_project_main.py
+
+# Pytest (same for both os)
+$ pytest my_test.py 
+
+# Check pylint score (current_Score: 9.11/10)
+$ pylint mini_project_main.py
 ```
 
 
