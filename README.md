@@ -1,5 +1,6 @@
 # Genesis Advanced python project
 * work done on this project from 2nd june to 7th june
+* Total lines of code 354(including docstring) 280+(excluding docstring)
 * Author: Debashish Dash
 * Ps number: 99004351
 ----
@@ -22,11 +23,12 @@
 
 SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -----|-----------------------|---------|----------|------|------
-| 01 | Encapsulation (used 3 classes) | X        | X      | 6  | 6
-| 02 | Inharitance used(multilevel and multiple) check line no 61 and 226 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
-| 03 | Exception Handling done.(ValueError and user defined) check line number 199 and 271 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
-| 04 | Pylint done, [pylint_Score_report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.11/10 | X        | X      | 6  | 6
+| 01 | **Encapsulation** (used 3 classes) | X        | X      | 6  | 6
+| 02 | **Inharitance** used(**multilevel** and **multiple**) check line no 61 and 226 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
+| 03 | **Exception Handling** done.(**ValueError** and **user defined**) check line number 199 and 271 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
+| 04 | Pylint done, [pylint_Score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.11/10 | X        | X      | 6  | 6
 | 05 | Tesing done of 6 functions with various test cases, [Pytest_output_reppport](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pytest_report.txt) | X        | X      | 6  | 6
+| 06 | [Code coverage report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/code_coverage.txt), coverage: 45%(functions which takes user inputs cant be tested using pytest so those are tested manually) | X        | X      | 6  | 6
 
 ## folder_structure
 
@@ -41,7 +43,6 @@ Folder        | description
 ## Directory_Tree
 
 ```
-
 ├── Implementation
 │   ├── Advanced_python_mini_project.xlsx
 |   ├── Outputs.xlsx
@@ -93,7 +94,7 @@ $ cd Implementation
 $ pip3 install -r requirements.txt
 =================================
 
-**(make sure u are running the code inside implementation directory) **
+**(make sure u are inside implementation directory)**
 
 # run the code in linux system
 $ python3 mini_project_main.py 
