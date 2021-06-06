@@ -5,6 +5,11 @@
 ----
 ### About
 * This mini project is an appliction that fetch data from a excel sheet and stores the fetched data in another excel sheet
+* It first asks the user to enter the Ps number of which he/she wants to fetch the data.
+* Then it asks the user to enter the sheet name from which sheet he/she wants to fetch data.
+* Then it fetch the data from the respective sheet and prints in the screen and also writes those data to another excel sheet called Outputs.xlsx
+* user also gets an **option to enter another sheet name** to fetch data or he/she can **move back if he/she wants to fetch data from a different ps number** or he/she **can exit** the code.
+* **Exceptions** are **Raised** on every invalid input from the user. i.e. If an user enters an invalid or wrong input then it prompts the user the respective message and asks the user to try again.
 
 ### folder_structure
 
