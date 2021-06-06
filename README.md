@@ -38,7 +38,7 @@ Folder        | description
 [ScreenShots](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/Screen_shots)        | screenshots of the code output are placed here.
 [pylint_n_pytest_report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/pylint_n_pytest_report)        | pylint score report and pytest output reorts are placed here.
 
-* pylint score and pytest output are also printed in [Readme file of Implementation folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md).
+* [pylint score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#pylint_score) and [pytest output](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#pytest_output). are also printed in Readme file of Implementation folder
 
 ## Directory_Tree
 
@@ -86,11 +86,16 @@ If you are using a lower version of python then you can upgrade using the pip pa
 # clone the repo
 $ git clone https://github.com/99004351-Debashish/Advanced_Python_mini_project.git
 
+# Activate your virtual env (given command is for linux, you can google for windows)
+$ source virtualenvironment/project_1/bin/activate
+
+*************************************************
 # change the working directory to Implementation
 $ cd Implementation
+*************************************************
 
 =================================
-# install the requirements
+# install the requirements( ensuring you have activated your virtual env)
 $ pip3 install -r requirements.txt
 =================================
 
