@@ -123,22 +123,22 @@ $ pylint mini_project_main.py
 
 * available ps numbers from the work book are fetched, converted to list and printed on the screen and prompted a message for the user to enter any of the available ps number
 
-<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/1_select_ps_number.png" height="600" width="950"> 
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/1_select_ps_number.png" height="500" width="950"> 
 
 **2 Invalid Ps number entered**
 
 * If the user enters anything other than the available ps numbers then the following output is shown to user and user is asked to try again, This step was done using **Exception handling**.
 
-<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/2_invalid_ps_entered.png" height="600" width="950"> 
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/2_invalid_ps_entered.png" height="500" width="950"> 
 
 **3 Select Sheet Option**
 
 * now after entering the correct ps number the user is asked to enter the sheet from which the user wants to fetch data.
 
-<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/3_select_sheet.png" height="600" width="950"> 
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/3_select_sheet.png" height="500" width="950"> 
 
 **4 What If the user enters an alphabet by mistake..??**
 
 * If the user enters an alphabet by mistake, then the user is prompted with **ValueError exception** and asked to try again. This step also includes Exception Handling.
 
-<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/4_char_value_exception.png" height="600" width="950">
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/4_char_value_exception.png" height="500" width="950">
