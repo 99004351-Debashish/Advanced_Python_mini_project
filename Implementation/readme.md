@@ -2,7 +2,7 @@
 
 * [pylint_score](#pylint_score)
 * [pytest_output](#pytest_output)
-* [pytest_output](#pytest_output)
+* [code_coverage](#code_coverage)
 
 ----
 ## pylint_score
