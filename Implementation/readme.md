@@ -1,9 +1,32 @@
 ## contents
 
+* [OOPs Concepts used in this project](#OOPs-Concept-used-in-this-project)
+* [Exception Handling used in this project](#Exception-Handling-used-in-this-project)
 * [pylint_score](#pylint_score)
 * [pytest_output](#pytest_output)
-* [code_coverage](#code_coverage)
 
+----
+## Main Objective of the project
+### OOPs Concepts used in this project
+* Encapsulation is used by using 4 classes.
+    * class SysytemOperations
+    * class MyExcel
+    * class MyExcelOperations
+    * class Runner
+* Multi-level Inheritance and Multiple Inheritance Implemented.
+    * class MyExcel inherits SystemOperations class
+    * class Runner inherits both MyExcel and MyExcelOperations i.e multiple inheritance
+* Static methods are also defined inside SystemOperations class
+
+### Exception Handling used in this project
+* In run() method of the Runner class
+    * When user enters choice for sheet number then ValueError exception is handled.
+    * When user enters a char value then ValueError Exception is raised and user is prompted to enter a valid value
+    * When user enters any other value other than the suggested ones then a user defined Exception is raised with a message to try again...
+* In ExcelOperations() method of the MyExcelOperations class
+    * Here the user input is checked
+    * If it is not available in the Ps number options then user defined exception is raised.
+    * The exception prints a message saying enter a valid Ps number and try again.
 ----
 ## pylint_score
 
