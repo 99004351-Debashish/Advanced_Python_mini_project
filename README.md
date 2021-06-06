@@ -14,3 +14,4 @@ Folder        | description
 [ScreenShots](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/Screen_shots)        | screenshots of the code output are placed here.
 [pylint_n_pytest_report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/pylint_n_pytest_report)        | pylint score report and pytest output reorts are placed here.
 
+* pylint score and pytest output are also printed in [Readme file of Implementation folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md).
