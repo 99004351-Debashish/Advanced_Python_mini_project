@@ -134,7 +134,7 @@ $ pylint mini_project_main.py
 
 <img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/1_select_ps_number.png" height="500" width="950"> 
 
-**2 Invalid Ps number entered**
+**2 What if user entered an invalid Ps number..??**
 
 * If the user enters anything other than the available ps numbers then the following output is shown to user and user is asked to try again, This step was done using **Exception handling**.
 
