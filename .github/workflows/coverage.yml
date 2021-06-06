@@ -29,5 +29,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           cd Implementation
-          pytest -cov=. test.py
+          pytest -cov=. my_test.py
           
