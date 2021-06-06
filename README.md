@@ -5,14 +5,15 @@
 * Ps number: 99004351
 ----
 ## Contents
-* [About](#About)
-* [Summary Table](#Summary_Table)
-* [Folde Structure](#folder_structure)
-* [Directory Tree](#Directory_Tree)
-* [Installations_and_Run_the_code](#Installations_and_Run_the_code)
-* [Screen Shots of outputs](#Screen_Shots_of_outputs)
+* [1_About](#1_About)
+* [2_Summary Table](#2_Summary_Table)
+* [3_Folde Structure](#3_folder_structure)
+* [4_Directory Tree](#4_Directory_Tree)
+* [5_Installations_and_Run_the_code](#5_Installations_and_Run_the_code)
+* [6_Screen Shots of outputs](#6_Screen_Shots_of_outputs)
+* [7_References](#7_References)
 ----
-## About
+## 1_About
 * This mini project is an appliction that fetch data from a excel sheet and stores the fetched data in another excel sheet
 * It first asks the user to enter the Ps number of which he/she wants to fetch the data.
 * Then it asks the user to enter the sheet name from which sheet he/she wants to fetch data.
@@ -20,7 +21,7 @@
 * user also gets an **option to enter another sheet name** to fetch data or he/she can **move back if he/she wants to fetch data from a different ps number** or he/she **can exit** the code.
 * **Exceptions** are **Raised** on every invalid input from the user. i.e. If an user enters an invalid or wrong input then it prompts the user the respective message and asks the user to try again.
 
-## Summary_Table
+## 2_Summary_Table
 
 SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -----|-----------------------|---------|----------|------|------
@@ -32,7 +33,7 @@ SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pa
 | 06 | [Code coverage report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/code_coverage.txt), coverage: 45%(functions which takes user inputs cant be tested using pytest so those are tested manually) | X        | X      | 6  | 6
 | 07 | Docstring added in all function and class | X        | X      | 6  | 6
 
-## folder_structure
+## 3_folder_structure
 
 Folder        | description
 --------------| ----------------------------------------------
@@ -42,7 +43,7 @@ Folder        | description
 
 * [pylint score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#pylint_score), [pytest output](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#pytest_output) and [code coverage](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#code_coverage). are also printed in Readme file of Implementation folder
 
-## Directory_Tree
+## 4_Directory_Tree
 
 ```
 ├── Implementation
@@ -78,7 +79,7 @@ Folder        | description
 ```
 
 -----
-## Installations_and_Run_the_code
+## 5_Installations_and_Run_the_code
 
 The code is written in Python 3.8.8 and the Os used is Ubuntu 20.04. If you dont have python installed you can find it [here](https://www.python.org/downloads/).
 If you are using a lower version of python then you can upgrade using the pip package, ensuring you have latest version of pip.
@@ -116,7 +117,7 @@ $ pytest my_test.py
 $ pylint mini_project_main.py
 ```
 ----
-## Screen_Shots_of_outputs
+## 6_Screen_Shots_of_outputs
 * All the Screen shots are also present in the Screen_shots folder. 
 
 **1 Select Ps Number output**
@@ -179,7 +180,7 @@ $ pylint mini_project_main.py
 
 <img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/9_exit.png" height="500" width="950">
 
-## References
+## 7_References
 * [openpyxl Documentation](https://openpyxl.readthedocs.io/en/stable/tutorial.html)
 * [java T Point](https://www.javatpoint.com/python-openpyxl)
 * [tutsplus](https://code.tutsplus.com/tutorials/how-to-work-with-excel-documents-using-python--cms-25698)
