@@ -1,12 +1,12 @@
 # Genesis Advanced python project
 * work done on this project from 2nd june to 7th june
-* Total lines of code 354(including docstring) 280+(excluding docstring)
+* Total lines of code 354(including docstring)
 * Author: Debashish Dash
 * Ps number: 99004351
 
-## Workflows
+**Workflows**
 Build | Code Quality | Unit Testing |
-|--------------|------------|--------------|
+|--------------------|----------------------------|--------------|
 |[![Python application](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/python-app.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/python-app.yml)  | [![flake8](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/flake8.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/flake8.yml) [![coverage](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/coverage.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/coverage.yml)  | [![Pytest](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/pytest.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/pytest.yml) |
 
 ----
@@ -21,7 +21,7 @@ Build | Code Quality | Unit Testing |
 * [7_References](#7_References)
 ----
 ## 1_About
-* This mini project is an appliction that fetch data from a excel sheet and stores the fetched data in another excel sheet
+* This project is an appliction that fetch data from an excel sheet and stores the fetched data in another sheet
 * It first asks the user to enter the Ps number of which he/she wants to fetch the data.
 * Then it asks the user to enter the sheet name from which sheet he/she wants to fetch data.
 * Then it fetch the data from the respective sheet and prints in the screen and also writes those data to another excel sheet called Outputs.xlsx
