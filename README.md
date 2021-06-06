@@ -10,7 +10,7 @@ Build | Code Quality | Unit Testing |
 |[![Python application](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/python-app.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/python-app.yml)  | [![flake8](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/flake8.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/flake8.yml) [![coverage](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/coverage.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/coverage.yml)  | [![Pytest](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/pytest.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/pytest.yml) |
 
 ----
-**[Implementation of OOPs concepts and Exception Handling in this project is Explained Here](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#Main-Objective)**
+**[Implementation of OOPs concepts and Exception Handling in this project is Explained Here](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#Main-Objective-of-the-project)**
 ## Contents
 * [1_About](#1_About)
 * [2_Summary Table](#2_Summary_Table)
