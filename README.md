@@ -161,8 +161,8 @@ $ pylint mini_project_main.py
 **7 Check the Excel output**
 
 * As mentioned in the previous point, the data is saved in the `Outputs.xlsx` file now user can open the file and check whether his/her data is stored or not.
-* *NOTE 1: IN the given below screenshot of Outputs.xlsx file till row 24 the datas were inserted during the previous runs of the code when the code was being tested.*
-* *Note 2: As this can be varified from the previos screen shot of point 6 that the data stored in the output file with ps number `99004361` and the sheet is `PL`. **and ad the previous 24 rows are of the previous run the data can be found in the 25th row**.*
+* **NOTE 1: IN the given below screenshot of Outputs.xlsx file till row 24 the datas were inserted during the previous runs of the code when the code was being tested.**
+* **Note 2: As this can be varified from the previos screen shot of point 6 that the data stored in the output file with ps number `99004361` and the sheet is `PL`. and ad the previous 24 rows are of the previous run the data can be found in the 25th row.**
 
 <img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/7_Excel_output.png" height="500" width="950">
 
