@@ -3,7 +3,13 @@
 * Author: Debashish Dash
 * Ps number: 99004351
 ----
-### About
+## Contents
+* [About](#About)
+* [Summary Table](#Summary_Table)
+* [Folde Structure](#folder_structure)
+* [Directory Tree](#Directory_Tree)
+----
+## About
 * This mini project is an appliction that fetch data from a excel sheet and stores the fetched data in another excel sheet
 * It first asks the user to enter the Ps number of which he/she wants to fetch the data.
 * Then it asks the user to enter the sheet name from which sheet he/she wants to fetch data.
@@ -11,7 +17,17 @@
 * user also gets an **option to enter another sheet name** to fetch data or he/she can **move back if he/she wants to fetch data from a different ps number** or he/she **can exit** the code.
 * **Exceptions** are **Raised** on every invalid input from the user. i.e. If an user enters an invalid or wrong input then it prompts the user the respective message and asks the user to try again.
 
-### folder_structure
+## Summary_Table
+
+SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
+-----|-----------------------|---------|----------|------|------
+| 01 | Encapsulation (used 3 classes) | X        | X      | 6  | 6
+| 02 | Inharitance used(multilevel and multiple) check line no 61 and 226 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
+| 03 | Exception Handling done.(ValueError and user defined) check line number 199 and 271 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
+| 04 | Pylint done, [pylint_Score_report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.11/10 | X        | X      | 6  | 6
+| 05 | Tesing done of 6 functions with various test cases, [Pytest_output_reppport](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pytest_report.txt) | X        | X      | 6  | 6
+
+## folder_structure
 
 Folder        | description
 --------------| ----------------------------------------------
@@ -21,12 +37,10 @@ Folder        | description
 
 * pylint score and pytest output are also printed in [Readme file of Implementation folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md).
 
-### Directory_Tree
+## Directory_Tree
 
 ```
-├── .github/workflows
-│   └── python-lint with flike8 and build.yml
-| 
+
 ├── Implementation
 │   ├── Advanced_python_mini_project.xlsx
 |   ├── Outputs.xlsx
@@ -58,3 +72,6 @@ Folder        | description
 └── README.md
 
 ```
+
+
+
