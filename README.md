@@ -3,7 +3,14 @@
 * Total lines of code 354(including docstring) 280+(excluding docstring)
 * Author: Debashish Dash
 * Ps number: 99004351
+
+## Workflows
+Build | Code Quality | Unit Testing |
+|--------------|------------|--------------|
+|[![Python application](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/python-app.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/python-app.yml)  | [![flake8](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/flake8.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/flake8.yml) [![coverage](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/coverage.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/coverage.yml)  | [![Pytest](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/pytest.yml/badge.svg)](https://github.com/99004351-Debashish/Advanced_Python_mini_project/actions/workflows/pytest.yml) |
+
 ----
+
 ## Contents
 * [1_About](#1_About)
 * [2_Summary Table](#2_Summary_Table)
@@ -32,6 +39,7 @@ SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pa
 | 05 | Tesing done of 6 functions with various test cases, [Pytest_output_reppport](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pytest_report.txt) | X        | X      | 6  | 6
 | 06 | [Code coverage report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/code_coverage.txt), coverage: 45%(functions which takes user inputs cant be tested using pytest so those are tested manually) | X        | X      | 6  | 6
 | 07 | Docstring added in all function and class | X        | X      | 6  | 6
+| 08 | Github workflows added | X        | X      | 6  | 6
 
 ## 3_folder_structure
 
