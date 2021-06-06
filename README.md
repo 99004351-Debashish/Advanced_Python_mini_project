@@ -1,6 +1,4 @@
 # Genesis Advanced python project
-* work done on this project from 2nd june to 7th june
-* Total lines of code 354(including docstring)
 * Author: Debashish Dash
 * Ps number: 99004351
 
