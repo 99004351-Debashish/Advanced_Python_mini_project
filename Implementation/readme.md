@@ -59,30 +59,3 @@ my_test.py::test_validate_ip PASSED                                      [100%]
 ```
 **=================================================================================**
 
-## code_coverage
-
-* **pytest --cov=. --cov-report term test.py**
-
-**=================================================================================**
-```
-============================= test session starts ==============================
-platform linux -- Python 3.8.5, pytest-6.2.3, py-1.10.0, pluggy-0.13.1
-rootdir: /home/deba/Desktop/LTTS/Advance_python/Advance_Python_project/Implementation
-plugins: cov-2.12.0
-collected 6 items
-
-my_test.py ......                                                        [100%]
-
------------ coverage: platform linux, python 3.8.5-final-0 -----------
-Name                   Stmts   Miss  Cover
-------------------------------------------
-mini_project_main.py     192    127    34%
-my_test.py                41      0   100%
-------------------------------------------
-TOTAL                    233    127    45%
-
-
-============================== 6 passed in 0.38s ===============================
-```
-* `Note: code coverage is 45% because some functions in the mini_project_main.py takes user input and those functions can not be tested using pytest, Those functions are manually tested.`
-**=================================================================================**
