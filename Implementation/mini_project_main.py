@@ -350,5 +350,5 @@ class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
 
 if __name__ == "__main__":
     work_book = load_workbook("Advanced_python_mini_project.xlsx")   #loading work book
-    main_class_obj = Runner(work_book)    # object of main class
+    main_class_obj = Runner(work_book)    # object of Runner class
     main_class_obj.run()

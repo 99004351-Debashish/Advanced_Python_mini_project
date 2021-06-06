@@ -118,7 +118,7 @@ $ pylint mini_project_main.py
 ```
 ----
 ## 6_Screen_Shots_of_outputs
-* All the Screen shots are also present in the Screen_shots folder. 
+* All the Screen shots are also present in the [Screen_shots folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/Screen_shots). 
 
 **1 Select Ps Number output**
 
