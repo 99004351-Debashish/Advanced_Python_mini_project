@@ -142,3 +142,45 @@ $ pylint mini_project_main.py
 * If the user enters an alphabet by mistake, then the user is prompted with **ValueError exception** and asked to try again. This step also includes Exception Handling.
 
 <img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/4_char_value_exception.png" height="500" width="950">
+
+**5 What if user enters invalid sheet choice**
+
+* If the user enters invalid sheet choice then the user will be prompted a message saying Invalid input please try again and the user is asked to enter his choice again.
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/5_invalid_sheet_choice_exception_handling.png" height="500" width="950">
+
+**6 Data is fetched on entering of correct sheet number**
+
+* If the user enters a correct choice for the sheet then a list containing the data of the respective PS number of the respective sheet is displayed in the screen along with **a message that says this data is also inserted in to the [Output.xlsx](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/Outputs.xlsx) file.** as shown in the below screenshot.
+* user can check the Outputs.xlsx file whether the data is inserted or not.
+* Along with the data, the Ps number and the sheet name is also saved for a better understanding of the Excel data.(**This is an Extra step performed by me that wasn't asked in the Requirement statement**)
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/6_data_fetched_n_saved_to_excel.png" height="500" width="950">
+
+**7 Check the Excel output**
+
+* As mentioned in the previous point, the data is saved in the `Outputs.xlsx` file now user can open the file and check whether his/her data is stored or not.
+* *NOTE 1: IN the given below screenshot of Outputs.xlsx file till row 24 the datas were inserted during the previous runs of the code when the code was being tested.*
+* *Note 2: As this can be varified from the previos screen shot of point 6 that the data stored in the output file with ps number `99004361` and the sheet is `PL`. and ad the previous 24 rows are of the previous run the data can be found in the 25th row.*
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/7_Excel_output.png" height="500" width="950">
+
+**8 After saving a data what next..??**
+
+* After saving a data in the `Outputs.xlsx` file the user can also enter another data from different sheet
+* Or the user can go back to the Ps number menu to enter another ps number and fetch its data.
+* Or the user can exit the code by pressing 0.
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/8_select_another_ps_number.png" height="500" width="950">
+
+**8 Exit the code**
+
+* If user wants to exit the application, he/she can simply do this by pressing 0, as suggested in the screen.
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/9_exit.png" height="500" width="950">
+
+## References
+* [openpyxl Documentation](https://openpyxl.readthedocs.io/en/stable/tutorial.html)
+* [java T Point](https://www.javatpoint.com/python-openpyxl)
+* [tutsplus](https://code.tutsplus.com/tutorials/how-to-work-with-excel-documents-using-python--cms-25698)
+
