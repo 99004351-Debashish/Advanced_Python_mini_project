@@ -10,6 +10,7 @@
 * [Folde Structure](#folder_structure)
 * [Directory Tree](#Directory_Tree)
 * [Installations_and_Run_the_code](#Installations_and_Run_the_code)
+* [Screen Shots of outputs](#Screen_Shots_of_outputs)
 ----
 ## About
 * This mini project is an appliction that fetch data from a excel sheet and stores the fetched data in another excel sheet
@@ -29,6 +30,7 @@ SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pa
 | 04 | Pylint done, [pylint_Score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.11/10 | X        | X      | 6  | 6
 | 05 | Tesing done of 6 functions with various test cases, [Pytest_output_reppport](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pytest_report.txt) | X        | X      | 6  | 6
 | 06 | [Code coverage report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/code_coverage.txt), coverage: 45%(functions which takes user inputs cant be tested using pytest so those are tested manually) | X        | X      | 6  | 6
+| 07 | Docstring added in all function and class | X        | X      | 6  | 6
 
 ## folder_structure
 
@@ -113,6 +115,30 @@ $ pytest my_test.py
 # Check pylint score (current_Score: 9.11/10)
 $ pylint mini_project_main.py
 ```
+----
+## Screen_Shots_of_outputs
+* All the Screen shots are also present in the Screen_shots folder. 
 
+**1 Select Ps Number output**
 
+* available ps numbers from the work book are fetched, converted to list and printed on the screen and prompted a message for the user to enter any of the available ps number
 
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/1_select_ps_number.png" height="600" width="950"> 
+
+**2 Invalid Ps number entered**
+
+* If the user enters anything other than the available ps numbers then the following output is shown to user and user is asked to try again, This step was done using **Exception handling**.
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/2_invalid_ps_entered.png" height="600" width="950"> 
+
+**3 Select Sheet Option**
+
+* now after entering the correct ps number the user is asked to enter the sheet from which the user wants to fetch data.
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/3_select_sheet.png" height="600" width="950"> 
+
+**4 What If the user enters an alphabet by mistake..??**
+
+* If the user enters an alphabet by mistake, then the user is prompted with **ValueError exception** and asked to try again. This step also includes Exception Handling.
+
+<img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/4_char_value_exception.png" height="600" width="950">
