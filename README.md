@@ -2,6 +2,7 @@
 * Author: Debashish Dash
 * Ps number: 99004351
 * **Implementation of OOPs concepts Exception Handling, pylint and pytest.**
+* **extras :  github-workflow/actions, exit option and go back option for user**
 
 **Workflows**
 Build | Code Quality | Unit Testing |
@@ -48,7 +49,7 @@ Build | Code Quality | Unit Testing |
     * The exception prints a message saying enter a valid Ps number and try again.
 ----
 
-## 3_folder_structure
+## 2_folder_structure
 
 Folder        | description
 --------------| ----------------------------------------------
@@ -58,7 +59,7 @@ Folder        | description
 
 * [pylint score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#pylint_score) and [pytest output](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#pytest_output). are also printed in Readme file of Implementation folder
 
-## 4_Directory_Tree
+## 3_Directory_Tree
 
 ```
 ├── Implementation
@@ -94,7 +95,7 @@ Folder        | description
 ```
 
 -----
-## 5_Installations_and_Run_the_code
+## 4_Installations_and_Run_the_code
 
 The code is written in Python 3.8.8 and the Os used is Ubuntu 20.04. If you dont have python installed you can find it [here](https://www.python.org/downloads/).
 If you are using a lower version of python then you can upgrade using the pip package, ensuring you have latest version of pip.
@@ -132,7 +133,7 @@ $ pytest my_test.py
 $ pylint mini_project_main.py
 ```
 ----
-## 6_Screen_Shots_of_outputs_with_explaination
+## 5_Screen_Shots_of_outputs_with_explaination
 * All the Screen shots are also present in the [Screen_shots folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/Screen_shots). 
 
 **1 Select Ps Number output**
@@ -195,7 +196,7 @@ $ pylint mini_project_main.py
 
 <img src="https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Screen_shots/9_exit.png" height="500" width="950">
 
-## 7_References
+## 6_References
 * [openpyxl Documentation](https://openpyxl.readthedocs.io/en/stable/tutorial.html)
 * [java T Point](https://www.javatpoint.com/python-openpyxl)
 * [tutsplus](https://code.tutsplus.com/tutorials/how-to-work-with-excel-documents-using-python--cms-25698)
