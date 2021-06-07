@@ -17,7 +17,7 @@
     * class MyExcel inherits SystemOperations class
     * class Runner inherits both MyExcel and MyExcelOperations i.e multiple inheritance
 * Static methods are also defined inside SystemOperations class
-[Go back to previous page](https://github.com/99004351-Debashish/Advanced_Python_mini_project)
+- [Go back to previous page](https://github.com/99004351-Debashish/Advanced_Python_mini_project)
 ### Exception Handling used in this project
 * In run() method of the Runner class
     * When user enters choice for sheet number then ValueError exception is handled.
@@ -27,7 +27,7 @@
     * Here the user input is checked
     * If it is not available in the Ps number options then user defined exception is raised.
     * The exception prints a message saying enter a valid Ps number and try again.
-[Go back to main previous page](https://github.com/99004351-Debashish/Advanced_Python_mini_project)
+- [Go back to main previous page](https://github.com/99004351-Debashish/Advanced_Python_mini_project)
 ----
 ## pylint_score
 

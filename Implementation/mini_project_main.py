@@ -43,11 +43,9 @@ class SystemOperations:
 
     def validate_ip(self, user_ip, flatten_ps):
         """[This method checks the validity the choices entered by the user]
-
         Args:
             user_ip ([type: char]): [user choice]
             flatten_ps ([type: list]): [available options]
-
         Returns:
             [type: boolean]: [True if present and false if not present in the list]
         """
@@ -60,7 +58,6 @@ class SystemOperations:
 
 class MyExcel(SystemOperations):                    # inharitance
     """[This class contains all the basic methos for getting values from the excel sheet]
-
     Inharitance:
         systemOperations ([type: class]): [MyExcel class inherits the systemOperations class]
     """
@@ -70,10 +67,8 @@ class MyExcel(SystemOperations):                    # inharitance
 
     def get_ps_number(self):
         """[fetch the data from the first column of the excel]
-
         Args:
             ip_ws ([type: object]): [active worksheet]
-
         Returns:
             [type: list]: [data of the 1st column in the excel sheet, return as list]
         """
@@ -86,10 +81,8 @@ class MyExcel(SystemOperations):                    # inharitance
 
     def flatten_ps_number(self,ps_list):
         """[so this function flatten the list in to 1-D]
-
         Args:
             ps_list ([type: list]): [It is a 2-D list]
-
         Returns:
             [type: list]: [Converted 1-D form of the 2-D list is returned]
         """
@@ -104,7 +97,6 @@ class MyExcel(SystemOperations):                    # inharitance
 
     def display_ps_number(self,flat_ps):
         """[prints the ps ids in the terminal]
-
         Args:
             flat_ps ([type: list]): [1-d converted form of the 2-D list data]
         """
@@ -138,11 +130,9 @@ class MyExcelOperations:
 
     def get_rows(self,work_sheet,ps_num):
         """[returns the row index object]
-
         Args:
             work_sheet ([type: worksheet object]): [choosen work sheet]
             ps_num ([type: int]): [number entered by user]
-
         Returns:
             [type: object]: [returns the index in object form]
         """
@@ -156,7 +146,6 @@ class MyExcelOperations:
     #var = get_rows(wb['Sem'], 99004351)
     def get_data(self,row_index):
         """[gets data from the index]
-
         Args:
             row_index ([type: object]): [takes object of row number as input]
         """
@@ -172,7 +161,6 @@ class MyExcelOperations:
 
     def write_excel(self, data, output_file, entered_ps_number, ls_sheet_name):
         """[This function writes the data to excel sheet]
-
         Args:
             data ([type: list]): [data to be entered]
             output_file ([type: workbook object]): [object of output workbook excel file]
@@ -189,7 +177,6 @@ class MyExcelOperations:
 
     def excel_operation(self,work_sheet_name, ps_num_entered):
         """[performs all the operation to fetch the data]
-
         Args:
             work_sheet_name ([type: object]): [selected worksheet from the user]
         """
@@ -225,7 +212,6 @@ class MyExcelOperations:
 
 class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
     """[main class uses multiple inheritance]
-
     Args:
         MyExcel : [MyExcel class inherited]
         MyExcelOperations : [MyExcelOperation class inherited]
@@ -242,18 +228,18 @@ class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
         while user_choice != '0':
             print("\nEnter the PS number from the below list:\n")
             print(20*'=')
-            my_excel_obj_in = self.my_excel_obj  # object of myExcel class
+            my_excel_obj_in = self.my_excel_obj           # object of myExcel class
             # calling functions of myExcel class
-            ps_num = my_excel_obj_in.get_ps_number()
+            ps_num = my_excel_obj_in.get_ps_number()                  # inheritance
             flatten_ps = my_excel_obj_in.flatten_ps_number(ps_num)
             my_excel_obj_in.display_ps_number(flatten_ps)
             print(20*'=')
             print("\nEnter the ps number to get its data")
             print("\nOr press 0 to exit")
             user_choice = input("\nEnter Your Choice: ")
-            my_excel_obj_in.screen_clear()
+            my_excel_obj_in.screen_clear()                           # inheritance used
             if user_choice == '0':
-                my_excel_obj_in.system_exit()                        # inherited function used
+                my_excel_obj_in.system_exit()                        # inheritance used
             if user_choice == '':
                 print(20*'=')
                 print("Oops You have entered nothing !!")
@@ -335,7 +321,7 @@ class Runner(MyExcel,MyExcelOperations):        # multiple inharitance
                             print("Please Try again and Enter Your choice in int value... :(\n")
                             print(30*'=')
                         except:                                    # user defined exception
-                            print("Unexpected error:", sys.exc_info()[0])
+                            print("\n\t\t\t\t\tSystem Exited.. Please visit again..!!")
                             raise
             else:
                 print("\n")
