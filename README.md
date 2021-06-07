@@ -1,7 +1,7 @@
 # Genesis Advanced python project
 * Author: Debashish Dash
 * Ps number: 99004351
-* **Implementation of OOPs concepts and Exception Handling in this project is Explained in the [readme file of Implementation folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#Main-Objective-of-the-project)**
+* **Implementation of OOPs concepts Exception Handling, pylint and pytest.**
 
 **Workflows**
 Build | Code Quality | Unit Testing |
@@ -11,32 +11,42 @@ Build | Code Quality | Unit Testing |
 ----
 ## Contents
 * [1_About](#1_About)
-* [2_Summary Table](#2_Summary_Table)
-* [3_Folde Structure](#3_folder_structure)
-* [4_Directory Tree](#4_Directory_Tree)
-* [5_Installations_and_Run_the_code](#5_Installations_and_Run_the_code)
-* [6_Screen Shots of outputs](#6_Screen_Shots_of_outputs)
-* [7_References](#7_References)
+* [2_Folde Structure](#2_folder_structure)
+* [3_Directory Tree](#3_Directory_Tree)
+* [4_Installations_and_Run_the_code](#4_Installations_and_Run_the_code)
+* [5_Screen Shots of outputs_with_Explaination](#5_Screen_Shots_of_outputs_with_Explaination)
+* [6_References](#6_References)
 ----
 ## 1_About
 * This project is an appliction that fetch data from an excel workbook and stores the fetched data in another workbook
 * It first asks the user to enter the Ps number of which he/she wants to fetch the data.
 * Then it asks the user to enter the sheet name from which sheet he/she wants to fetch data.
 * Then it fetch the data from the respective sheet and prints in the screen and also writes those data to another excel sheet called Outputs.xlsx
-* user also gets an **option to enter another sheet name** to fetch data or he/she can **move back if he/she wants to fetch data from a different ps number** or he/she **can exit** the code.
-* **Exceptions** are **Raised** on every invalid input from the user. i.e. If an user enters an invalid or wrong input then it prompts the user the respective message and asks the user to try again.
+* **pytest** and **pylint** performed.
 
-## 2_Summary_Table
+**OOPs Concepts used in this project**
 
-SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
------|-----------------------|---------|----------|------|------
-| 01 | **Encapsulation** (used 4 classes) | X        | X      | 6  | 6
-| 02 | **Inharitance** used(**multilevel** and **multiple**) check line no 61 and 226 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
-| 03 | **Exception Handling** done.(**ValueError** and **user defined**) check line number 199 and 271 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
-| 04 | Pylint done, [pylint_Score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.21/10 | X        | X      | 6  | 6
-| 05 | Tesing done of 6 functions with various test cases, [Pytest_output_reppport](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pytest_report.txt) | X        | X      | 6  | 6
-| 06 | Docstring added in all function and class | X        | X      | 6  | 6
-| 07 | Github workflows added | X        | X      | 6  | 6
+* Encapsulation is used by using 4 classes.
+    * class SysytemOperations
+    * class MyExcel
+    * class MyExcelOperations
+    * class Runner
+* Multi-level Inheritance and Multiple Inheritance Implemented.
+    * class MyExcel inherits SystemOperations class
+    * class Runner inherits both MyExcel and MyExcelOperations i.e multiple inheritance
+* Static methods are also defined inside SystemOperations class
+
+**Exception Handling used in this project**
+
+* In run() method of the Runner class
+    * When user enters choice for sheet number then ValueError exception is handled.
+    * When user enters a char value then ValueError Exception is raised and user is prompted to enter a valid value
+    * When user enters any other value other than the suggested ones then a user defined Exception is raised with a message to try again...
+* In ExcelOperations() method of the MyExcelOperations class
+    * Here the user input is checked
+    * If it is not available in the Ps number options then user defined exception is raised.
+    * The exception prints a message saying enter a valid Ps number and try again.
+----
 
 ## 3_folder_structure
 
@@ -122,7 +132,7 @@ $ pytest my_test.py
 $ pylint mini_project_main.py
 ```
 ----
-## 6_Screen_Shots_of_outputs
+## 6_Screen_Shots_of_outputs_with_explaination
 * All the Screen shots are also present in the [Screen_shots folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/tree/master/Screen_shots). 
 
 **1 Select Ps Number output**
