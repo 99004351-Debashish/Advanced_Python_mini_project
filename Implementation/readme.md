@@ -1,34 +1,9 @@
 ## contents
-
-* [OOPs Concepts used in this project](#OOPs-Concepts-used-in-this-project)
-* [Exception Handling used in this project](#Exception-Handling-used-in-this-project)
 * [pylint_score](#pylint_score)
 * [pytest_output](#pytest_output)
 
 ----
-## Main Objective of the project
-### OOPs Concepts used in this project
-* Encapsulation is used by using 4 classes.
-    * class SysytemOperations
-    * class MyExcel
-    * class MyExcelOperations
-    * class Runner
-* Multi-level Inheritance and Multiple Inheritance Implemented.
-    * class MyExcel inherits SystemOperations class
-    * class Runner inherits both MyExcel and MyExcelOperations i.e multiple inheritance
-* Static methods are also defined inside SystemOperations class
-- [Go back to previous page](https://github.com/99004351-Debashish/Advanced_Python_mini_project)
-### Exception Handling used in this project
-* In run() method of the Runner class
-    * When user enters choice for sheet number then ValueError exception is handled.
-    * When user enters a char value then ValueError Exception is raised and user is prompted to enter a valid value
-    * When user enters any other value other than the suggested ones then a user defined Exception is raised with a message to try again...
-* In ExcelOperations() method of the MyExcelOperations class
-    * Here the user input is checked
-    * If it is not available in the Ps number options then user defined exception is raised.
-    * The exception prints a message saying enter a valid Ps number and try again.
-- [Go back to main previous page](https://github.com/99004351-Debashish/Advanced_Python_mini_project)
-----
+
 ## pylint_score
 
 * **pylint mini_project_main.py**
@@ -58,7 +33,8 @@ Your code has been rated at 9.21/10 (previous run: 9.21/10, +0.00)
 **=================================================================================**
 
 * **pylint Implementation/**
-**==================================================================================**
+
+**=================================================================================**
 ```
 ************* Module Implementation.mini_project_main
 Implementation/mini_project_main.py:44:4: R0201: Method could be a function (no-self-use)
@@ -81,8 +57,9 @@ Implementation/mini_project_main.py:238:4: R0915: Too many statements (93/50) (t
 
 ------------------------------------------------------------------
 Your code has been rated at 9.26/10 (previous run: 9.26/10, +0.00)
+===================================================================================
 ```
-**=================================================================================**
+
 ----
 ## pytest_output
 
