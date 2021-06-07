@@ -1,7 +1,7 @@
 # Genesis Advanced python project
 * Author: Debashish Dash
 * Ps number: 99004351
-* **Implementation of OOPs concepts and Exception Handling [in this project is Explained Here](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#Main-Objective-of-the-project)**
+* **Implementation of OOPs concepts and Exception Handling in this project is Explained in the [readme file of Implementation folder](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/readme.md#Main-Objective-of-the-project)**
 
 **Workflows**
 Build | Code Quality | Unit Testing |
@@ -19,7 +19,7 @@ Build | Code Quality | Unit Testing |
 * [7_References](#7_References)
 ----
 ## 1_About
-* This project is an appliction that fetch data from an excel sheet and stores the fetched data in another sheet
+* This project is an appliction that fetch data from an excel workbook and stores the fetched data in another workbook
 * It first asks the user to enter the Ps number of which he/she wants to fetch the data.
 * Then it asks the user to enter the sheet name from which sheet he/she wants to fetch data.
 * Then it fetch the data from the respective sheet and prints in the screen and also writes those data to another excel sheet called Outputs.xlsx
@@ -30,14 +30,13 @@ Build | Code Quality | Unit Testing |
 
 SL no |    Tasks    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -----|-----------------------|---------|----------|------|------
-| 01 | **Encapsulation** (used 3 classes) | X        | X      | 6  | 6
+| 01 | **Encapsulation** (used 4 classes) | X        | X      | 6  | 6
 | 02 | **Inharitance** used(**multilevel** and **multiple**) check line no 61 and 226 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
 | 03 | **Exception Handling** done.(**ValueError** and **user defined**) check line number 199 and 271 of [mini_project_main.py](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/Implementation/mini_project_main.py) | X        | X      | 6  | 6
-| 04 | Pylint done, [pylint_Score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.11/10 | X        | X      | 6  | 6
+| 04 | Pylint done, [pylint_Score](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pylint_report.txt): 9.21/10 | X        | X      | 6  | 6
 | 05 | Tesing done of 6 functions with various test cases, [Pytest_output_reppport](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/pytest_report.txt) | X        | X      | 6  | 6
-| 06 | [Code coverage report](https://github.com/99004351-Debashish/Advanced_Python_mini_project/blob/master/pylint_n_pytest_report/code_coverage.txt), coverage: 45%(functions which takes user inputs cant be tested using pytest so those are tested manually) | X        | X      | 6  | 6
-| 07 | Docstring added in all function and class | X        | X      | 6  | 6
-| 08 | Github workflows added | X        | X      | 6  | 6
+| 06 | Docstring added in all function and class | X        | X      | 6  | 6
+| 07 | Github workflows added | X        | X      | 6  | 6
 
 ## 3_folder_structure
 

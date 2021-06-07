@@ -1,6 +1,6 @@
 ## contents
 
-* [OOPs Concepts used in this project](#OOPs-Concept-used-in-this-project)
+* [OOPs Concepts used in this project](#OOPs-Concepts-used-in-this-project)
 * [Exception Handling used in this project](#Exception-Handling-used-in-this-project)
 * [pylint_score](#pylint_score)
 * [pytest_output](#pytest_output)
@@ -27,6 +27,7 @@
     * Here the user input is checked
     * If it is not available in the Ps number options then user defined exception is raised.
     * The exception prints a message saying enter a valid Ps number and try again.
+[Go back to main readme]
 ----
 ## pylint_score
 
@@ -36,27 +37,52 @@
 ```
 ************* Module mini_project_main
 mini_project_main.py:44:4: R0201: Method could be a function (no-self-use)
-mini_project_main.py:67:22: W0621: Redefining name 'work_book' from outer scope (line 352) (redefined-outer-name)
+mini_project_main.py:67:22: W0621: Redefining name 'work_book' from outer scope (line 335) (redefined-outer-name)
 mini_project_main.py:87:4: R0201: Method could be a function (no-self-use)
 mini_project_main.py:105:4: R0201: Method could be a function (no-self-use)
-mini_project_main.py:131:22: W0621: Redefining name 'work_book' from outer scope (line 352) (redefined-outer-name)
+mini_project_main.py:131:22: W0621: Redefining name 'work_book' from outer scope (line 335) (redefined-outer-name)
 mini_project_main.py:139:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 mini_project_main.py:157:4: R0201: Method could be a function (no-self-use)
 mini_project_main.py:173:4: R0201: Method could be a function (no-self-use)
-mini_project_main.py:200:12: W0105: String statement has no effect (pointless-string-statement)
-mini_project_main.py:233:23: W0621: Redefining name 'work_book' from outer scope (line 352) (redefined-outer-name)
-mini_project_main.py:238:4: R0914: Too many local variables (17/15) (too-many-locals)
-mini_project_main.py:272:28: W0105: String statement has no effect (pointless-string-statement)
-mini_project_main.py:242:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
-mini_project_main.py:238:4: R0912: Too many branches (17/12) (too-many-branches)
-mini_project_main.py:238:4: R0915: Too many statements (93/50) (too-many-statements)
+mini_project_main.py:229:23: W0621: Redefining name 'work_book' from outer scope (line 335) (redefined-outer-name)
+mini_project_main.py:229:4: W0231: __init__ method from base class 'MyExcel' is not called (super-init-not-called)
+mini_project_main.py:229:4: W0231: __init__ method from base class 'MyExcelOperations' is not called (super-init-not-called)
+mini_project_main.py:234:4: R0914: Too many local variables (17/15) (too-many-locals)
+mini_project_main.py:234:4: R0912: Too many branches (15/12) (too-many-branches)
+mini_project_main.py:234:4: R0915: Too many statements (81/50) (too-many-statements)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.11/10 (previous run: 9.11/10, +0.00)
+Your code has been rated at 9.21/10 (previous run: 9.21/10, +0.00)
 =================================================================================
 ```
 **=================================================================================**
 
+* **pylint Implementation/**
+**==================================================================================**
+```
+************* Module Implementation.mini_project_main
+Implementation/mini_project_main.py:44:4: R0201: Method could be a function (no-self-use)
+Implementation/mini_project_main.py:67:22: W0621: Redefining name 'work_book' from outer scope (line 352) (redefined-outer-name)
+Implementation/mini_project_main.py:87:4: R0201: Method could be a function (no-self-use)
+Implementation/mini_project_main.py:105:4: R0201: Method could be a function (no-self-use)
+Implementation/mini_project_main.py:131:22: W0621: Redefining name 'work_book' from outer scope (line 352) (redefined-outer-name)
+Implementation/mini_project_main.py:139:4: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+Implementation/mini_project_main.py:157:4: R0201: Method could be a function (no-self-use)
+Implementation/mini_project_main.py:173:4: R0201: Method could be a function (no-self-use)
+Implementation/mini_project_main.py:200:12: W0105: String statement has no effect (pointless-string-statement)
+Implementation/mini_project_main.py:233:23: W0621: Redefining name 'work_book' from outer scope (line 352) (redefined-outer-name)
+Implementation/mini_project_main.py:233:4: W0231: __init__ method from base class 'MyExcel' is not called (super-init-not-called)
+Implementation/mini_project_main.py:233:4: W0231: __init__ method from base class 'MyExcelOperations' is not called (super-init-not-called)
+Implementation/mini_project_main.py:238:4: R0914: Too many local variables (17/15) (too-many-locals)
+Implementation/mini_project_main.py:272:28: W0105: String statement has no effect (pointless-string-statement)
+Implementation/mini_project_main.py:242:8: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+Implementation/mini_project_main.py:238:4: R0912: Too many branches (17/12) (too-many-branches)
+Implementation/mini_project_main.py:238:4: R0915: Too many statements (93/50) (too-many-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 9.26/10 (previous run: 9.26/10, +0.00)
+```
+**=================================================================================**
 ----
 ## pytest_output
 
